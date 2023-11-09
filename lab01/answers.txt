@@ -2,33 +2,36 @@ E Number: E/19/129
 Name: K.H. Gunawardana
 
 1).
-a. 200
+a. Status code: 200
+
 b. Server: Apache/2.4.52 (FreeBSD) and OS: FreeBSD
-c. 381335
-d. <class 'bytes'>
+
+c. 381335 bytes
+
+d. <class 'bytes'>, the type is bytes
+
 e. By using bytes type, python can preserved the content that comes from server.
 And also it provides preserving data integrity and allowing handling of various data types.
-f. In python it gives an error, the responce has the status code 404(Not Found)
-g. 
-h. the previous body will decode into readable text
+
+f. For URL "http://eng.pdn.ac.lk/unknown", in python it gives an error, the responce has the status code 404(Not Found). Thus the URL is invalid and domain is valid.
+for URL "http://unknown.pdn.ac.lk", it also give an error "urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>". This is beacause the given web URL has no IP address.
+The domain is also invalid.
+
+h. the previous body will decode into readable text using decode("utf-8")
+
 
 2). 
 i. When including the &format=json&pretty=1 part, the reponce body is in json format with pretty formatting.
-j. The URL should be, https://www.duckduckgo.com/?q=Rocco's+basilisk
+
+j. The URL should be, https://duckduckgo.com/?q=Rocco%27s+basilisk
+
 k. URL encoding is the method of converting special characters and spaces in a URL into a format suitable for internet transmission. It replaces reserved characters with their hexadecimal representation, known as percent encoding. URL decoding is the opposite process, reverting percent-encoded characters to their original form.
 URL encoding is essential to ensure that URLs remain valid and free from characters that might disrupt or misinterpret the URL structure. It safeguards against issues involving special characters, spaces, and non-ASCII characters in URLs.
 
-l. 
-from urllib import request
-
-with request.urlopen("https://www.duckduckgo.com/?q=කණිෂ්ක") as query:
-
-    headers = query.headers.items()
-
-    body = query.read()
-
-    print(body)
+l. Use the URL as, "https://www.duckduckgo.com/?q=කණිෂ්ක"
 
 3).
+
+
 
 
