@@ -2,7 +2,7 @@ E Number: E/19/129
 Name: K.H. Gunawardana
 
 1).
-a. Status code: 200
+a. Status code/Responce code: 200
 
 b. Server: Apache/2.4.52 (FreeBSD) and OS: FreeBSD
 
@@ -10,11 +10,11 @@ c. 381335 bytes
 
 d. <class 'bytes'>, the type is bytes
 
-e. By using bytes type, python can preserved the content that comes from server.
-And also it provides preserving data integrity and allowing handling of various data types because all of them are converted to bytes.
+e. By using bytes type, python can preserved the content that comes from server. This is also provides preserving data integrity and allowing handling of various data types because all of them are converted to bytes.
+Using bytes is also suitable for situations where the content can be any sequence of bytes, without making assumptions about the specific nature of that content.
 
 f. For URL "http://eng.pdn.ac.lk/unknown", in python it gives an error, the responce has the status code 404(Not Found). Thus the URL is invalid but domain is valid. The request not found in the given domain.
-For URL "http://unknown.pdn.ac.lk", it also give an error "urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>". This is beacause the given web URL(domain) has no IP address.
+For URL "http://unknown.pdn.ac.lk", gives an error "urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>". This is beacause the given web URL(domain) has no IP address mapping.
 The domain is also invalid.
 
 h. the previous body will decode into readable text using decode("utf-8"). We can now see the text in Sinhala and Tamil.
@@ -30,9 +30,3 @@ k. URL encoding is the method of converting special characters and spaces in a U
 URL encoding is essential to ensure that URLs remain valid and free from characters that might disrupt or misinterpret the URL structure. It safeguards against issues involving special characters, spaces, and non-ASCII characters in URLs.
 
 l. Used the URL as, "https://www.duckduckgo.com/?q=කණිෂ්ක"
-
-3).
-
-
-
-
