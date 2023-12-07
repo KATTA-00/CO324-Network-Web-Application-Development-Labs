@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package tasklist;
+
+// TaskService represents the CRUD operations for managing tasks.
+service TaskService {
+  // Create a new task.
+  rpc CreateTask (Task) returns (Task);
+
+  // Get a task by its ID.
+  rpc GetTask (TaskId) returns (Task);
+
+  // Update an existing task.
+  rpc UpdateTask (Task) returns (Task);
+
+  // Delete a task by its ID.
+  rpc DeleteTask (TaskId) returns (DeleteTaskResponse);
+}
+
+// Task message represents a task in the task list.
+message Task {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+}
+
+// TaskId message represents the ID of a task.
+message TaskId {
+  string id = 1;
+}
+
+// DeleteTaskResponse is the response for the DeleteTask RPC.
+message DeleteTaskResponse {
+  bool success = 1;
+}
