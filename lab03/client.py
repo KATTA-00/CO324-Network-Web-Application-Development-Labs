@@ -4,24 +4,34 @@ import tasks_pb2_grpc
 
 def create_task(stub, task):
     # Implement logic to send a request to create a new task.
+
+    # Use gRPC stub to call the CreateTask method and pass the task as the request.
+    # Return the response from the server (the newly created task).
     return stub.CreateTask(task)
 
 def get_task(stub, task_id):
-
     # Implement logic to send a request to retrieve a task by its ID.
-    taskId = tasks_pb2.TaskId(id=task_id)
 
+    # Create a TaskId message containing the specified task_id.
+    taskId = tasks_pb2.TaskId(id=task_id)
+    # Use gRPC stub to call the GetTask method and pass the taskId as the request.
+    # Return the response from the server (the retrieved task).
     return stub.GetTask(taskId)
 
 def update_task(stub, task):
     # Implement logic to send a request to update an existing task.
+
+    # Use gRPC stub to call the UpdateTask method and pass the task as the request.
+    # Return the response from the server (the updated task).
     return stub.UpdateTask(task)
 
 def delete_task(stub, task_id):
     # Implement logic to send a request to delete a task by its ID.
 
+    # Create a TaskId message containing the specified task_id.
     taskId = tasks_pb2.TaskId(id=task_id)
-    
+    # Use gRPC stub to call the DeleteTask method and pass the taskId as the request.
+    # Return the response from the server (indicating the success or failure of the deletion).
     return stub.DeleteTask(taskId)
 
 
