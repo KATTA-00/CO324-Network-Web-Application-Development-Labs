@@ -1,6 +1,5 @@
 import grpc
 from concurrent import futures
-import tasks_pb2
 import tasks_pb2_grpc
 
 class TaskService(tasks_pb2_grpc.TaskServiceServicer):
