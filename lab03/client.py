@@ -14,6 +14,7 @@ def get_task(stub, task_id):
 
     # Create a TaskId message containing the specified task_id.
     taskId = tasks_pb2.TaskId(id=task_id)
+
     # Use gRPC stub to call the GetTask method and pass the taskId as the request.
     # Return the response from the server (the retrieved task).
     return stub.GetTask(taskId)
