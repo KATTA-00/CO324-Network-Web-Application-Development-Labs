@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package state;
+
+service StateMachine{
+
+    rpc trigger(TriggerRequest) returns (TriggerResponse) {}
+
+}
+
+message TriggerRequest{
+    string state = 1;
+}
+
+message TriggerResponse{
+    bool success = 1;
+}
