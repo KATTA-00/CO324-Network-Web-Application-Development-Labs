@@ -37,17 +37,13 @@ class StateMachine(state_pb2_grpc.StateMachineServicer):
             return state_pb2.TriggerResponse(success=False)
         
 
-def run():
-    
-        server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    
-        state_pb2_grpc.add_StateMachineServicer_to_server(StateMachine(transitions, 'start'), server)
-    
-        server.add_insecure_port('[::]:50051')
-    
-        server.start()
-        print("Server started on port 50051...")
-        server.wait_for_termination()
+def server():
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    state_pb2_grpc.add_StateMachineServicer_to_server(StateMachine(transitions, 'start'), server)
+    server.add_insecure_port('[::]:50051')
+    server.start()
+    print('Server started on port 50051...')
+    server.wait_for_termination()
 
 if __name__ == '__main__':
-    run()
+    server()
