@@ -37,6 +37,10 @@ class StateMachine(state_pb2_grpc.StateMachineServicer):
             return state_pb2.TriggerResponse(success=False)
         
 
+    def getState(self, request, context):
+        return state_pb2.StateResponse(state=self.current_state)
+        
+
 def server():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     state_pb2_grpc.add_StateMachineServicer_to_server(StateMachine(transitions, 'start'), server)

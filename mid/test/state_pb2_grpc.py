@@ -19,12 +19,23 @@ class StateMachineStub(object):
                 request_serializer=state__pb2.TriggerRequest.SerializeToString,
                 response_deserializer=state__pb2.TriggerResponse.FromString,
                 )
+        self.getState = channel.unary_unary(
+                '/state.StateMachine/getState',
+                request_serializer=state__pb2.VoidRequest.SerializeToString,
+                response_deserializer=state__pb2.StateResponse.FromString,
+                )
 
 
 class StateMachineServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def trigger(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getState(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +48,11 @@ def add_StateMachineServicer_to_server(servicer, server):
                     servicer.trigger,
                     request_deserializer=state__pb2.TriggerRequest.FromString,
                     response_serializer=state__pb2.TriggerResponse.SerializeToString,
+            ),
+            'getState': grpc.unary_unary_rpc_method_handler(
+                    servicer.getState,
+                    request_deserializer=state__pb2.VoidRequest.FromString,
+                    response_serializer=state__pb2.StateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +78,22 @@ class StateMachine(object):
         return grpc.experimental.unary_unary(request, target, '/state.StateMachine/trigger',
             state__pb2.TriggerRequest.SerializeToString,
             state__pb2.TriggerResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getState(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/state.StateMachine/getState',
+            state__pb2.VoidRequest.SerializeToString,
+            state__pb2.StateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

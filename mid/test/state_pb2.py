@@ -14,17 +14,23 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstate.proto\x12\x05state\"\x1f\n\x0eTriggerRequest\x12\r\n\x05state\x18\x01 \x01(\t\"\"\n\x0fTriggerResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32J\n\x0cStateMachine\x12:\n\x07trigger\x12\x15.state.TriggerRequest\x1a\x16.state.TriggerResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstate.proto\x12\x05state\"\x1e\n\rStateResponse\x12\r\n\x05state\x18\x01 \x01(\t\"\x1f\n\x0eTriggerRequest\x12\r\n\x05state\x18\x01 \x01(\t\"\"\n\x0fTriggerResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\x0e\n\x0cVoidResponse\"\r\n\x0bVoidRequest2\x82\x01\n\x0cStateMachine\x12:\n\x07trigger\x12\x15.state.TriggerRequest\x1a\x16.state.TriggerResponse\"\x00\x12\x36\n\x08getState\x12\x12.state.VoidRequest\x1a\x14.state.StateResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'state_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
-  _globals['_TRIGGERREQUEST']._serialized_start=22
-  _globals['_TRIGGERREQUEST']._serialized_end=53
-  _globals['_TRIGGERRESPONSE']._serialized_start=55
-  _globals['_TRIGGERRESPONSE']._serialized_end=89
-  _globals['_STATEMACHINE']._serialized_start=91
-  _globals['_STATEMACHINE']._serialized_end=165
+  _globals['_STATERESPONSE']._serialized_start=22
+  _globals['_STATERESPONSE']._serialized_end=52
+  _globals['_TRIGGERREQUEST']._serialized_start=54
+  _globals['_TRIGGERREQUEST']._serialized_end=85
+  _globals['_TRIGGERRESPONSE']._serialized_start=87
+  _globals['_TRIGGERRESPONSE']._serialized_end=121
+  _globals['_VOIDRESPONSE']._serialized_start=123
+  _globals['_VOIDRESPONSE']._serialized_end=137
+  _globals['_VOIDREQUEST']._serialized_start=139
+  _globals['_VOIDREQUEST']._serialized_end=152
+  _globals['_STATEMACHINE']._serialized_start=155
+  _globals['_STATEMACHINE']._serialized_end=285
 # @@protoc_insertion_point(module_scope)

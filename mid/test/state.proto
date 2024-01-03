@@ -6,6 +6,12 @@ service StateMachine{
 
     rpc trigger(TriggerRequest) returns (TriggerResponse) {}
 
+    rpc getState(VoidRequest) returns (StateResponse) {}
+
+}
+
+message StateResponse{
+    string state = 1;
 }
 
 message TriggerRequest{
@@ -15,3 +21,7 @@ message TriggerRequest{
 message TriggerResponse{
     bool success = 1;
 }
+
+message VoidResponse{}
+
+message VoidRequest{}
