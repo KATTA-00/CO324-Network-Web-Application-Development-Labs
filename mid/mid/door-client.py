@@ -16,7 +16,7 @@ def run_client(events):
     stub = door_pb2_grpc.DoorStub(channel)
 
     # Add code to call the server
-    # create a Event
+    # create an Event
     eventObj = door_pb2.Event(event="")
 
     # loop throught the list of state changes

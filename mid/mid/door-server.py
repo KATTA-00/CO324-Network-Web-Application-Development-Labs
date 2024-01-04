@@ -22,7 +22,9 @@ class FiniteStateMachine:
     
     # init 
     def __init__(self, transitions, initial_state):
+        # states and operations
         self.transitions = transitions
+        # current state
         self.current_state = initial_state
 
     # funtion to change the state
