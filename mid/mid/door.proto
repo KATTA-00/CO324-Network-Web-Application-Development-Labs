@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+service Door {
+  rpc ProcessEvent (Event) returns (Response);
+  rpc GetCurrentState (google.protobuf.Empty) returns (CurrentStateResponse);
+}
+
+message Event {
+  string event = 1;
+}
+
+message Response {
+  string message = 1;
+}
+
+message CurrentStateResponse {
+  string current_state = 1;
+}

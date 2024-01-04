@@ -3,7 +3,7 @@ from concurrent import futures
 
 import state_pb2
 import state_pb2_grpc
-
+ 
 transitions = {
 
     'start': {'run': 'running'},
